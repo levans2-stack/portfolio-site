@@ -1,504 +1,872 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enchanted Forest</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family: Georgia, "Times New Roman", serif;
-            background: #10251d;
-            color: #f5f1dc;
-            overflow-x: hidden;
-        }
-
-        /* HERO */
-
-        header {
-            min-height: 420px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px 20px;
-
-            background:
-                linear-gradient(
-                    rgba(10, 35, 25, 0.72),
-                    rgba(10, 35, 25, 0.9)
-                ),
-                radial-gradient(
-                    circle at 20% 20%,
-                    #d5a84b 0,
-                    transparent 12%
-                ),
-                radial-gradient(
-                    circle at 80% 30%,
-                    #d9c66c 0,
-                    transparent 10%
-                ),
-                linear-gradient(
-                    135deg,
-                    #183d2b,
-                    #315d3f,
-                    #10251d
-                );
-
-            border-bottom: 3px solid #c89b3c;
-        }
-
-        .moon {
-            font-size: 70px;
-            margin-bottom: 10px;
-            filter: drop-shadow(0 0 15px #e8d98a);
-        }
-
-        header h1 {
-            font-size: clamp(2.5rem, 7vw, 5rem);
-            margin: 0;
-            color: #f5df91;
-            text-shadow: 0 0 20px rgba(245, 223, 145, 0.45);
-            letter-spacing: 3px;
-        }
-
-        header p {
-            max-width: 650px;
-            font-size: 1.15rem;
-            line-height: 1.7;
-            color: #e6e1c8;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 25px;
-            background: #c89b3c;
-            color: #10251d;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 30px;
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            transform: translateY(-4px);
-            background: #f1d47a;
-            box-shadow: 0 8px 20px rgba(241, 212, 122, 0.3);
-        }
-
-        /* NAVIGATION */
-
-        nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 25px;
-            padding: 18px 20px;
-            background: #0b1b15;
-            border-bottom: 1px solid #4d704d;
-        }
-
-        nav a {
-            color: #d9d09c;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #f1d47a;
-        }
-
-        /* MAIN */
-
-        main {
-            width: 100%;
-        }
-
-        section {
-            max-width: 1200px;
-            margin: auto;
-            padding: 70px 25px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .section-title h2 {
-            font-size: 2.4rem;
-            color: #e7d27d;
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: #c9d1bd;
-        }
-
-        /* FLEXBOX CARDS */
-
-        .forest-cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 25px;
-            justify-content: center;
-            align-items: stretch;
-        }
-
-        .card {
-            flex: 1 1 300px;
-            max-width: 370px;
-            padding: 30px;
-            background: linear-gradient(
-                145deg,
-                #1c3b2b,
-                #142c21
-            );
-            border: 1px solid #60784c;
-            border-radius: 18px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-            transition: 0.3s;
-            text-align: center;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: #d4b75a;
-            box-shadow: 0 15px 35px rgba(200, 155, 60, 0.18);
-        }
-
-        .card-icon {
-            font-size: 45px;
-            margin-bottom: 10px;
-        }
-
-        .card h3 {
-            color: #e6cf75;
-            font-size: 1.5rem;
-        }
-
-        .card p {
-            line-height: 1.7;
-            color: #d5dbc9;
-        }
-
-        /* ABOUT */
-
-        .about-box {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 40px;
-            background: #152f23;
-            padding: 40px;
-            border-radius: 25px;
-            border: 1px solid #536c4b;
-        }
-
-        .about-symbol {
-            flex: 1 1 250px;
-            min-height: 250px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 120px;
-            background: #0f261c;
-            border-radius: 20px;
-        }
-
-        .about-text {
-            flex: 2 1 400px;
-        }
-
-        .about-text h2 {
-            color: #e6cf75;
-            font-size: 2.2rem;
-        }
-
-        .about-text p {
-            line-height: 1.8;
-            color: #d5dbc9;
-        }
-
-        /* SKILLS */
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .skill {
-            padding: 12px 20px;
-            border-radius: 30px;
-            background: #294b35;
-            border: 1px solid #728457;
-            color: #f0df98;
-        }
-
-        /* FOOTER */
-
-        footer {
-            text-align: center;
-            padding: 35px 20px;
-            background: #08150f;
-            border-top: 2px solid #c89b3c;
-            color: #aeb9a6;
-        }
-
-        footer span {
-            color: #e6cf75;
-        }
-
-        /* TABLET */
-
-        @media (min-width: 768px) {
-
-            .forest-cards {
-                flex-direction: row;
-            }
-
-            .card {
-                flex: 1 1 calc(50% - 25px);
-            }
-
-            header {
-                min-height: 500px;
-            }
-        }
-
-        /* DESKTOP */
-
-        @media (min-width: 1200px) {
-
-            .forest-cards {
-                flex-direction: row;
-            }
-
-            .card {
-                flex: 1 1 calc(33.333% - 25px);
-            }
-
-            section {
-                padding-left: 40px;
-                padding-right: 40px;
-            }
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 767px) {
-
-            nav {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            header {
-                min-height: 430px;
-                padding: 30px 15px;
-            }
-
-            .moon {
-                font-size: 55px;
-            }
-
-            header h1 {
-                letter-spacing: 1px;
-            }
-
-            header p {
-                font-size: 1rem;
-            }
-
-            section {
-                padding: 50px 15px;
-            }
-
-            .forest-cards {
-                flex-direction: column;
-            }
-
-            .card {
-                width: 100%;
-                max-width: none;
-            }
-
-            .about-box {
-                padding: 25px;
-            }
-
-            .about-symbol {
-                min-height: 180px;
-                font-size: 80px;
-            }
-        }
-    </style>
-</head>
+/* =========================================
+   🍄 ENCHANTED FAIRY FOREST 🍄
+   Lai'Lanie Evans Portfolio
+   ========================================= */
+
+:root {
+    --forest-dark: #071c14;
+    --forest: #0d2d20;
+    --forest-light: #17452f;
+    --moss: #4f7448;
+    --sage: #91a96b;
+
+    --gold: #f5d77b;
+    --cream: #fff7dc;
+    --soft-gold: #ffe99b;
+
+    --mushroom-red: #b95b55;
+    --mushroom-pink: #e9a4a9;
+    --mushroom-cream: #fff1d2;
+
+    --lavender: #c8b4df;
+    --fairy-blue: #a8d8d8;
+
+    --shadow: rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================================
+   BASIC RESET
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(139, 177, 86, 0.16),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(219, 193, 100, 0.12),
+            transparent 22%
+        ),
+        linear-gradient(
+            180deg,
+            var(--forest-dark),
+            var(--forest),
+            #091f16
+        );
+
+    color: var(--cream);
+    line-height: 1.7;
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+/* =========================================
+   MAGICAL FIREFLIES
+   ========================================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    background-image:
+        radial-gradient(
+            circle at 10% 20%,
+            var(--soft-gold) 0 2px,
+            transparent 3px
+        ),
+        radial-gradient(
+            circle at 25% 70%,
+            var(--soft-gold) 0 2px,
+            transparent 3px
+        ),
+        radial-gradient(
+            circle at 43% 35%,
+            var(--soft-gold) 0 2px,
+            transparent 3px
+        ),
+        radial-gradient(
+            circle at 60% 75%,
+            var(--soft-gold) 0 2px,
+            transparent 3px
+        ),
+        radial-gradient(
+            circle at 75% 25%,
+            var(--soft-gold) 0 2px,
+            transparent 3px
+        ),
+        radial-gradient(
+            circle at 90% 65%,
+            var(--soft-gold) 0 2px,
+            transparent 3px
+        );
 
-<body>
+    opacity: 0.55;
+    animation: sparkle 5s infinite alternate;
+}
 
-    <header id="home">
-
-        <div class="moon">🌙</div>
+@keyframes sparkle {
+    from {
+        opacity: 0.25;
+    }
 
-        <h1>Enchanted Forest</h1>
-
-        <p>
-            Welcome to my little corner of the digital forest.
-            A place where creativity, technology, and imagination
-            grow together.
-        </p>
+    to {
+        opacity: 0.75;
+    }
+}
 
-        <a href="#explore" class="button">
-            Enter the Forest ✨
-        </a>
 
-    </header>
+/* =========================================
+   HERO
+   ========================================= */
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#explore">Explore</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-    </nav>
+.hero {
+    min-height: 600px;
 
-    <main>
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-        <section id="explore">
+    text-align: center;
 
-            <div class="section-title">
+    padding: 60px 20px;
 
-                <h2>🌿 Explore the Forest 🌿</h2>
+    position: relative;
+    z-index: 1;
 
-                <p>
-                    Discover the different parts of my creative journey.
-                </p>
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(222, 196, 108, 0.18),
+            transparent 25%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(5, 25, 17, 0.2),
+            rgba(7, 28, 20, 0.95)
+        );
 
-            </div>
+    border-bottom: 2px solid var(--gold);
 
-            <div class="forest-cards">
+    overflow: hidden;
+}
 
-                <div class="card">
 
-                    <div class="card-icon">🧚</div>
+/* Fairy forest glow */
 
-                    <h3>Creativity</h3>
+.hero::before {
+    content: "✦     ✧       ✦       ✧     ✦";
+    position: absolute;
 
-                    <p>
-                        I enjoy creating ideas that are unique, colorful,
-                        and different from the ordinary. I believe websites
-                        should have personality.
-                    </p>
+    top: 80px;
+    left: 0;
+    right: 0;
 
-                </div>
+    font-size: 25px;
+    letter-spacing: 25px;
 
-                <div class="card">
+    color: var(--soft-gold);
 
-                    <div class="card-icon">💻</div>
+    opacity: 0.5;
 
-                    <h3>Technology</h3>
+    animation: twinkle 4s infinite alternate;
+}
 
-                    <p>
-                        I am developing my skills in information technology,
-                        web development, HTML, CSS, and responsive design.
-                    </p>
+@keyframes twinkle {
+    from {
+        opacity: 0.2;
+        transform: translateY(5px);
+    }
 
-                </div>
+    to {
+        opacity: 0.8;
+        transform: translateY(-5px);
+    }
+}
 
-                <div class="card">
 
-                    <div class="card-icon">🌱</div>
+/* Moon */
 
-                    <h3>Growth</h3>
+.moon {
+    font-size: 100px;
 
-                    <p>
-                        Every new project gives me an opportunity to learn
-                        something new and improve my technical skills.
-                    </p>
+    color: var(--soft-gold);
 
-                </div>
+    margin-bottom: 10px;
 
-            </div>
+    text-shadow:
+        0 0 10px var(--soft-gold),
+        0 0 30px rgba(255, 233, 155, 0.5),
+        0 0 60px rgba(255, 233, 155, 0.25);
 
-        </section>
+    animation: moonGlow 3s infinite alternate;
+}
 
-        <section id="about">
+@keyframes moonGlow {
+    from {
+        transform: scale(1);
+    }
 
-            <div class="about-box">
+    to {
+        transform: scale(1.08);
+    }
+}
 
-                <div class="about-symbol">
-                    🌲
-                </div>
 
-                <div class="about-text">
+/* Main name */
 
-                    <h2>About This Space</h2>
+.hero h1 {
+    font-size: clamp(2.8rem, 8vw, 6rem);
 
-                    <p>
-                        This website is inspired by an enchanted forest,
-                        combining deep greens, warm gold, natural colors,
-                        and magical elements.
-                    </p>
+    color: var(--gold);
 
-                    <p>
-                        I wanted the design to feel peaceful, creative,
-                        and different while still being easy to navigate.
-                    </p>
+    letter-spacing: 3px;
 
-                </div>
+    line-height: 1.1;
 
-            </div>
+    text-shadow:
+        0 0 10px rgba(245, 215, 123, 0.5),
+        0 0 30px rgba(245, 215, 123, 0.25);
 
-        </section>
+    margin-bottom: 25px;
 
-        <section id="skills">
+    position: relative;
+    z-index: 2;
+}
 
-            <div class="section-title">
 
-                <h2>✨ My Skill Garden ✨</h2>
+/* Hero description */
 
-                <p>
-                    Skills I am currently learning and developing.
-                </p>
+.hero p {
+    max-width: 700px;
 
-            </div>
+    font-size: 1.2rem;
 
-            <div class="skills">
+    color: #e8e4ce;
 
-                <div class="skill">HTML</div>
-                <div class="skill">CSS</div>
-                <div class="skill">Flexbox</div>
-                <div class="skill">Responsive Design</div>
-                <div class="skill">Web Development</div>
-                <div class="skill">Information Technology</div>
+    margin-bottom: 25px;
+}
 
-            </div>
 
-        </section>
+/* =========================================
+   BUTTON
+   ========================================= */
 
-    </main>
+.button {
+    display: inline-block;
 
-    <footer>
+    padding: 14px 30px;
 
-        <p>
-            🌙 Made with <span>creativity</span> and a little bit of magic.
-        </p>
+    color: var(--forest-dark);
 
-    </footer>
+    background: linear-gradient(
+        135deg,
+        var(--gold),
+        var(--soft-gold)
+    );
 
-</body>
-</html>
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 50px;
+
+    border: 2px solid var(--gold);
+
+    box-shadow:
+        0 0 15px rgba(245, 215, 123, 0.25);
+
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    transform: translateY(-5px) scale(1.03);
+
+    box-shadow:
+        0 0 20px rgba(245, 215, 123, 0.5),
+        0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+nav {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 35px;
+
+    padding: 18px 20px;
+
+    background: rgba(4, 22, 15, 0.95);
+
+    border-bottom: 1px solid var(--moss);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 10;
+
+    backdrop-filter: blur(10px);
+}
+
+nav a {
+    color: var(--cream);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    font-size: 1.05rem;
+
+    transition: all 0.3s ease;
+
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--gold);
+
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--gold);
+
+    text-shadow:
+        0 0 10px rgba(245, 215, 123, 0.5);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   MAIN
+   ========================================= */
+
+main {
+    position: relative;
+    z-index: 1;
+}
+
+section {
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 90px 30px;
+}
+
+
+/* =========================================
+   SECTION TITLES
+   ========================================= */
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+.eyebrow {
+    color: var(--sage);
+
+    font-size: 0.85rem;
+
+    letter-spacing: 4px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.section-title h2 {
+    color: var(--gold);
+
+    font-size: clamp(2rem, 5vw, 3rem);
+
+    margin-bottom: 12px;
+
+    text-shadow:
+        0 0 15px rgba(245, 215, 123, 0.2);
+}
+
+.section-title p {
+    color: #cbd4bf;
+
+    max-width: 650px;
+
+    margin: auto;
+}
+
+
+/* =========================================
+   FOREST CARDS
+   FLEXBOX REQUIREMENT
+   ========================================= */
+
+.forest-cards {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    align-items: stretch;
+
+    gap: 30px;
+}
+
+
+/* =========================================
+   CARD
+   ========================================= */
+
+.card {
+    flex: 1 1 300px;
+
+    max-width: 370px;
+
+    padding: 35px 30px;
+
+    text-align: center;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(27, 69, 47, 0.95),
+            rgba(11, 39, 26, 0.95)
+        );
+
+    border: 1px solid var(--moss);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 35px var(--shadow),
+        inset 0 0 25px rgba(145, 169, 107, 0.04);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    overflow: hidden;
+}
+
+
+/* Little mushrooms at bottom of cards */
+
+.card::after {
+    content: "🍄  🍄  🍄";
+
+    position: absolute;
+
+    bottom: 5px;
+    left: 0;
+    right: 0;
+
+    font-size: 20px;
+
+    opacity: 0.45;
+}
+
+
+/* Card hover */
+
+.card:hover {
+    transform: translateY(-10px);
+
+    border-color: var(--gold);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(245, 215, 123, 0.12);
+}
+
+
+/* Card icons */
+
+.card-icon {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+
+    filter:
+        drop-shadow(
+            0 0 10px rgba(255, 233, 155, 0.25)
+        );
+
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-icon {
+    transform: scale(1.15) rotate(-3deg);
+}
+
+
+/* Card headings */
+
+.card h3 {
+    color: var(--gold);
+
+    font-size: 1.6rem;
+
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #d2d9ca;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   QUOTE SECTION
+   ========================================= */
+
+.quote-section {
+    max-width: 900px;
+
+    padding-top: 30px;
+    padding-bottom: 80px;
+}
+
+.quote {
+    text-align: center;
+
+    padding: 55px 35px;
+
+    border-radius: 30px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(145, 169, 107, 0.12),
+            transparent 65%
+        );
+
+    border-top: 1px solid var(--moss);
+    border-bottom: 1px solid var(--moss);
+
+    position: relative;
+}
+
+.quote > span {
+    font-size: 80px;
+
+    color: var(--gold);
+
+    line-height: 0.5;
+}
+
+.quote p {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+
+    font-style: italic;
+
+    color: var(--cream);
+
+    max-width: 700px;
+
+    margin: 20px auto;
+}
+
+.quote small {
+    color: var(--sage);
+
+    font-size: 1rem;
+}
+
+
+/* =========================================
+   SKILLS
+   ========================================= */
+
+.skills-section {
+    text-align: center;
+}
+
+.skills {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+.skills span {
+    padding: 12px 20px;
+
+    background: rgba(30, 70, 47, 0.8);
+
+    border: 1px solid var(--moss);
+
+    color: var(--cream);
+
+    border-radius: 50px;
+
+    transition: all 0.3s ease;
+}
+
+.skills span:hover {
+    background: var(--forest-light);
+
+    color: var(--gold);
+
+    border-color: var(--gold);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    text-align: center;
+
+    padding: 40px 20px;
+
+    background: #05130d;
+
+    border-top: 2px solid var(--gold);
+
+    color: #aeb9a6;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+footer p {
+    margin: 5px;
+}
+
+footer::before {
+    content: "🍄   🌿   ✨   🌿   🍄";
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-size: 20px;
+
+    opacity: 0.7;
+}
+
+
+/* =========================================
+   TABLET
+   768px+
+   ========================================= */
+
+@media (min-width: 768px) {
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .forest-cards {
+        flex-direction: row;
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 30px);
+    }
+
+    nav {
+        gap: 45px;
+    }
+}
+
+
+/* =========================================
+   DESKTOP
+   1200px+
+   ========================================= */
+
+@media (min-width: 1200px) {
+
+    .hero {
+        min-height: 700px;
+    }
+
+    section {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .forest-cards {
+        flex-direction: row;
+    }
+
+    .card {
+        flex: 1 1 calc(33.333% - 30px);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   320px - 767px
+   ========================================= */
+
+@media (max-width: 767px) {
+
+    .hero {
+        min-height: 600px;
+
+        padding: 50px 18px;
+    }
+
+    .hero::before {
+        font-size: 15px;
+
+        letter-spacing: 10px;
+    }
+
+    .moon {
+        font-size: 75px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.4rem, 12vw, 4rem);
+
+        letter-spacing: 1px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+
+        gap: 12px;
+
+        padding: 20px;
+    }
+
+    section {
+        padding: 60px 18px;
+    }
+
+    .forest-cards {
+        flex-direction: column;
+
+        gap: 25px;
+    }
+
+    .card {
+        width: 100%;
+
+        max-width: none;
+
+        flex: 1 1 auto;
+
+        padding: 30px 22px;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .quote {
+        padding: 40px 20px;
+    }
+
+    .skills {
+        gap: 10px;
+    }
+
+    .skills span {
+        padding: 10px 15px;
+
+        font-size: 0.9rem;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+   320px
+   ========================================= */
+
+@media (max-width: 360px) {
+
+    .hero {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .button {
+        padding: 12px 20px;
+    }
+
+    section {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .card {
+        padding: 25px 18px;
+    }
+
+    .card-icon {
+        font-size: 45px;
+    }
+
+    .quote p {
+        font-size: 1.15rem;
+    }
+}
