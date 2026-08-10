@@ -2,20 +2,30 @@ body {
     font-family: "Quicksand", sans-serif;
 
     background:
-        linear-gradient(
-            rgba(5, 25, 17, 0.55),
-            rgba(5, 25, 17, 0.72)
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255, 233, 155, 0.18),
+            transparent 12%
         ),
-        url("Fairy Forest.png");
-
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(200, 180, 223, 0.12),
+            transparent 15%
+        ),
+        linear-gradient(
+            180deg,
+            #102f20 0%,
+            #17452f 45%,
+            #0b291c 100%
+        );
 
     color: var(--cream);
+
     line-height: 1.6;
+
     overflow-x: hidden;
+
     position: relative;
+
     min-height: 100vh;
 }
