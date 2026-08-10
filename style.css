@@ -14,12 +14,8 @@ body {
     background-repeat: no-repeat;
 
     color: var(--cream);
-
     line-height: 1.6;
-
     overflow-x: hidden;
-
     position: relative;
-
     min-height: 100vh;
 }
