@@ -1,53 +1,106 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lai'Lanie Evans | Projects</title>
+
+```
+<title>Lai'Lanie Evans | Projects</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Site CSS -->
+<link rel="stylesheet" href="style.css">
+```
+
 </head>
+
 <body>
 
+```
 <header>
-    <h1>My Projects</h1>
-
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="projects.html">Projects</a> |
+    <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="projects.html" aria-current="page">Projects</a>
         <a href="about.html">About & Contact</a>
     </nav>
+
+    <h1>My Projects</h1>
+    <p>A collection of things I've created and learned.</p>
 </header>
 
 <main>
 
-<section>
-    <h2>Current Projects</h2>
+    <section aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Featured Projects</h2>
 
-    <article>
-        <h3>HTML Portfolio Website</h3>
+        <!-- Gestalt Principle: Proximity -->
+        <!-- Related project information is grouped closely together. -->
 
-        <p>
-            This website is my first personal portfolio. It demonstrates my understanding
-            of semantic HTML and website structure while giving visitors a place to learn
-            more about my skills and future work.
-        </p>
-    </article>
+        <div class="project-grid">
 
-    <article>
-        <h3>Future Projects</h3>
+            <article class="project-card">
+                <h3>Personal Portfolio</h3>
 
-        <p>
-            As I continue learning Information Technology, I plan to add projects related
-            to web development, networking, cybersecurity, and technical support.
-        </p>
-    </article>
+                <p>
+                    A responsive personal portfolio website created with
+                    HTML and CSS.
+                </p>
 
-</section>
+                <p>
+                    This project focuses on responsive layouts,
+                    accessibility, and visual design.
+                </p>
+
+                <a href="index.html">View Portfolio</a>
+            </article>
+
+            <article class="project-card">
+                <h3>Fairy Forest Website</h3>
+
+                <p>
+                    A nature-inspired website using a forest color palette,
+                    decorative elements, and responsive design.
+                </p>
+
+                <p>
+                    The design uses consistent colors, spacing, and
+                    typography throughout the site.
+                </p>
+
+                <a href="index.html">View Design</a>
+            </article>
+
+            <article class="project-card">
+                <h3>IT Learning Projects</h3>
+
+                <p>
+                    Hands-on projects focused on information technology,
+                    networking, troubleshooting, and technical skills.
+                </p>
+
+                <p>
+                    These projects have helped me build practical IT
+                    knowledge and problem-solving skills.
+                </p>
+
+                <a href="about.html">Learn More</a>
+            </article>
+
+        </div>
+
+    </section>
 
 </main>
 
 <footer>
-    <p>&copy; 2026 Lai'Lanie Evans</p>
+    <p>&copy; 2026 Lai'Lanie Evans. All rights reserved.</p>
 </footer>
+```
 
 </body>
 </html>
