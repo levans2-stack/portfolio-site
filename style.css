@@ -2,8 +2,6 @@
    FAIRY FOREST PORTFOLIO
    ================================ */
 
-/* ---------- Base ---------- */
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -50,31 +48,20 @@ h3 {
     margin-bottom: 16px;
 }
 
-img {
-    max-width: 100%;
-    display: block;
-}
-
 
 /* ---------- Header ---------- */
 
 header {
     background: #18382a;
     border-bottom: 3px solid #c9a44c;
-    padding: 50px 24px;
+    padding: 45px 24px;
     text-align: center;
 }
 
-header p {
-    color: #f4f1df;
-    max-width: 650px;
-    margin: 0 auto 24px;
-}
-
 .moon {
-    font-size: 3rem;
     color: #f3d58a;
-    margin-bottom: 10px;
+    font-size: 3rem;
+    margin-bottom: 8px;
 }
 
 
@@ -87,6 +74,7 @@ header p {
     color: #10231b;
     display: inline-block;
     font-weight: 700;
+    margin-top: 12px;
     padding: 12px 24px;
     text-decoration: none;
 }
@@ -94,18 +82,17 @@ header p {
 .button:hover,
 .button:focus {
     background: #f3d58a;
-    color: #10231b;
     outline: 3px solid #fff4c7;
     outline-offset: 2px;
 }
 
 
-/* ---------- Navigation ---------- */
+/* ==========================================
+   NAVIGATION
+   ========================================== */
 
 nav {
     background: #0b1812;
-    border-bottom: 1px solid #4f765d;
-    margin: 0;
     padding: 12px 20px;
     text-align: center;
 }
@@ -134,29 +121,45 @@ nav a:focus {
     outline: none;
 }
 
+
+/* Menu button */
+
 #menuButton {
     display: none;
+    background: #c9a44c;
+    border: 2px solid #f3d58a;
+    border-radius: 8px;
+    color: #10231b;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 10px 18px;
+}
+
+#menuButton:hover,
+#menuButton:focus {
+    background: #f3d58a;
 }
 
 
-/* ---------- Main Layout ---------- */
+/* ---------- Main ---------- */
 
 main {
     margin: 0 auto;
-    max-width: 1200px;
-    padding: 48px 24px;
+    max-width: 1100px;
+    padding: 40px 20px;
 }
 
 section {
     background: #18382a;
     border: 1px solid #4f765d;
     border-radius: 16px;
-    margin-bottom: 32px;
-    padding: 32px;
+    margin-bottom: 30px;
+    padding: 30px;
 }
 
 .section-title {
-    margin-bottom: 30px;
+    margin-bottom: 24px;
+    text-align: center;
 }
 
 .eyebrow {
@@ -164,39 +167,42 @@ section {
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 2px;
-    text-transform: uppercase;
 }
 
 
-/* ---------- About ---------- */
+/* ==========================================
+   ABOUT PHOTO
+   ========================================== */
 
 .about-layout {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 40px;
     align-items: center;
+    display: grid;
+    gap: 35px;
+    grid-template-columns: 280px 1fr;
+}
+
+.about-image {
+    width: 280px;
 }
 
 .about-image img {
     border: 3px solid #c9a44c;
     border-radius: 16px;
-    margin: 0 auto;
-    max-height: 550px;
+    display: block;
+    height: 340px;
     object-fit: cover;
-    width: 100%;
-}
-
-.about-text {
-    font-size: 1.05rem;
+    width: 280px;
 }
 
 
-/* ---------- Cards ---------- */
+/* ==========================================
+   CARDS
+   ========================================== */
 
 .card-container,
 .technology-grid {
     display: grid;
-    gap: 24px;
+    gap: 20px;
     grid-template-columns: repeat(3, 1fr);
 }
 
@@ -205,48 +211,42 @@ section {
     background: #245039;
     border: 2px solid #5f876b;
     border-radius: 12px;
-    padding: 24px;
-}
-
-.card p,
-.journey-card p {
-    color: #f4f1df;
+    padding: 22px;
 }
 
 .card-icon {
     font-size: 2rem;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 
-/* ---------- Culinary Journey ---------- */
+/* ==========================================
+   CULINARY
+   ========================================== */
 
 .journey-layout {
+    align-items: center;
     display: grid;
-    grid-template-columns: 1.4fr 0.8fr;
     gap: 30px;
-    align-items: start;
+    grid-template-columns: 1.5fr 1fr;
 }
 
 .journey-text {
-    font-size: 1.05rem;
-}
-
-.journey-card {
-    text-align: center;
+    font-size: 1.02rem;
 }
 
 
-/* ---------- Gallery ---------- */
+/* ==========================================
+   GALLERY
+   ========================================== */
 
 .photo-gallery {
     display: grid;
+    gap: 18px;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
 }
 
-.photo-gallery figure,
-.recognition-grid figure {
+.photo-gallery figure {
     background: #245039;
     border: 2px solid #5f876b;
     border-radius: 12px;
@@ -254,81 +254,99 @@ section {
 }
 
 .photo-gallery img {
-    height: 280px;
+    display: block;
+    height: 230px;
     object-fit: cover;
     width: 100%;
 }
 
-.photo-gallery figcaption,
-.recognition-grid figcaption {
-    padding: 12px;
-    text-align: center;
+.photo-gallery figcaption {
     color: #fff4c7;
     font-weight: 700;
+    padding: 10px;
+    text-align: center;
 }
 
 
-/* ---------- Achievements ---------- */
+/* ==========================================
+   ACHIEVEMENTS
+   ========================================== */
 
 .recognition-grid {
     display: grid;
+    gap: 20px;
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    margin-bottom: 30px;
+}
+
+.recognition-grid figure {
+    background: #10231b;
+    border: 2px solid #5f876b;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .recognition-grid img {
-    height: 350px;
+    display: block;
+    height: 280px;
     object-fit: contain;
     width: 100%;
-    background: #10231b;
 }
 
-.recognition-text {
-    background: #245039;
-    border: 2px solid #5f876b;
-    border-radius: 12px;
-    padding: 24px;
+.recognition-grid figcaption {
+    color: #fff4c7;
+    padding: 10px;
+    text-align: center;
 }
 
 
-/* ---------- Skills ---------- */
+/* ==========================================
+   SKILLS
+   ========================================== */
 
 .skills {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
     justify-content: center;
 }
 
 .skills span {
     background: #245039;
-    border: 1px solid #c9a44c;
-    border-radius: 20px;
+    border: 1px solid #5f876b;
+    border-radius: 30px;
     color: #fff4c7;
     font-weight: 700;
-    padding: 10px 18px;
+    padding: 9px 16px;
 }
 
 
-/* ---------- Contact Form ---------- */
+/* ==========================================
+   CONTACT
+   ========================================== */
 
 .contact-section {
-    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    max-width: 750px;
+}
+
+.email-link a {
+    color: #f3d58a;
+    font-weight: 700;
 }
 
 #contactForm {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+    margin-top: 25px;
 }
 
-#contactForm label {
+#contactForm > div {
+    margin-bottom: 20px;
+}
+
+label {
     display: block;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 }
 
 input,
@@ -341,10 +359,6 @@ textarea {
     font-size: 1rem;
     padding: 12px;
     width: 100%;
-}
-
-textarea {
-    resize: vertical;
 }
 
 input:focus,
@@ -365,21 +379,13 @@ textarea:focus {
 .success {
     color: #f3d58a;
     font-weight: 700;
-    min-height: 20px;
-}
-
-.email-link a {
-    color: #f3d58a;
-    font-weight: 700;
-}
-
-.email-link a:hover,
-.email-link a:focus {
-    color: #fff4c7;
+    margin-top: 12px;
 }
 
 
-/* ---------- Buttons ---------- */
+/* ==========================================
+   BUTTONS
+   ========================================== */
 
 button {
     background: #c9a44c;
@@ -390,7 +396,7 @@ button {
     font-family: "Quicksand", sans-serif;
     font-size: 1rem;
     font-weight: 700;
-    padding: 12px 24px;
+    padding: 11px 20px;
 }
 
 button:hover,
@@ -401,20 +407,39 @@ button:focus {
 }
 
 
-/* ---------- Fun Fact ---------- */
+/* ==========================================
+   FUN FACT
+   ========================================== */
 
 .fact-section {
     text-align: center;
 }
 
 #fact {
-    margin: 20px auto;
-    max-width: 750px;
     min-height: 50px;
+    margin-bottom: 20px;
 }
 
 
-/* ---------- Keyboard Accessibility ---------- */
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+footer {
+    background: #0b1812;
+    border-top: 2px solid #4f765d;
+    padding: 24px;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 8px;
+}
+
+
+/* ==========================================
+   KEYBOARD ACCESSIBILITY
+   ========================================== */
 
 button:focus-visible,
 a:focus-visible,
@@ -425,30 +450,19 @@ textarea:focus-visible {
 }
 
 
-/* ---------- Footer ---------- */
-
-footer {
-    background: #0b1812;
-    border-top: 2px solid #4f765d;
-    padding: 24px;
-    text-align: center;
-}
-
-footer p {
-    color: #f4f1df;
-    margin-bottom: 8px;
-}
-
-
 /* ==========================================
    TABLET
    ========================================== */
 
 @media (max-width: 900px) {
 
-    .about-layout,
-    .journey-layout {
+    .about-layout {
         grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-image {
+        margin: 0 auto;
     }
 
     .card-container,
@@ -469,6 +483,10 @@ footer p {
 
 @media (max-width: 700px) {
 
+    header {
+        padding: 35px 18px;
+    }
+
     h1 {
         font-size: 2rem;
     }
@@ -478,7 +496,7 @@ footer p {
     }
 
     main {
-        padding: 30px 16px;
+        padding: 25px 14px;
     }
 
     section {
@@ -486,80 +504,80 @@ footer p {
     }
 
 
-    /* Mobile menu button */
-
+    /* SHOW MENU BUTTON */
     #menuButton {
-        display: block;
-        margin: 0 auto;
+        display: inline-block;
     }
 
 
-    /* Hide navigation links until button is clicked */
-
+    /* HIDE LINKS BY DEFAULT */
     #navMenu {
         display: none;
         flex-direction: column;
-        gap: 8px;
+        gap: 5px;
         margin-top: 12px;
         width: 100%;
     }
 
 
-    /* Show navigation when JavaScript adds .show */
-
+    /* JAVASCRIPT OPENS MENU */
     #navMenu.show {
         display: flex;
     }
 
 
     nav a {
-        text-align: center;
+        display: block;
         width: 100%;
     }
 
 
     .card-container,
     .technology-grid,
-    .photo-gallery,
+    .journey-layout,
     .recognition-grid {
         grid-template-columns: 1fr;
     }
 
 
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
     .photo-gallery img {
-        height: auto;
-        max-height: 500px;
+        height: 220px;
     }
 
 
     .recognition-grid img {
-        height: auto;
+        height: 300px;
     }
 
 }
 
 
 /* ==========================================
-   SMALL PHONES
+   SMALL PHONE
    ========================================== */
 
 @media (max-width: 480px) {
 
-    header {
-        padding: 35px 16px;
+    .photo-gallery {
+        grid-template-columns: 1fr;
     }
 
-    h1 {
-        font-size: 1.8rem;
+    .photo-gallery img {
+        height: 300px;
     }
 
-    section {
-        padding: 18px;
+    .about-image,
+    .about-image img {
+        width: 240px;
     }
 
-    .skills span {
-        font-size: 0.9rem;
-        padding: 8px 12px;
+    .about-image img {
+        height: 300px;
     }
 
 }
