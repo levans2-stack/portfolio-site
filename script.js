@@ -11,12 +11,14 @@ if (menuButton && navMenu) {
         const isOpen = navMenu.classList.toggle("show");
 
         menuButton.setAttribute("aria-expanded", isOpen);
+
+        menuButton.textContent = isOpen ? "✕ Close Menu" : "☰ Menu";
     });
 }
 
 
 // ==========================================
-// 2. CONTACT FORM VALIDATION
+// 2. CONTACT FORM VALIDATION + EMAIL
 // ==========================================
 
 const contactForm = document.querySelector("#contactForm");
@@ -35,10 +37,10 @@ if (contactForm) {
 
     contactForm.addEventListener("submit", (event) => {
 
-        // Prevent the form from submitting/reloading the page
+        // Prevent normal form submission
         event.preventDefault();
 
-        // Clear old messages
+        // Clear previous messages
         nameError.textContent = "";
         emailError.textContent = "";
         messageError.textContent = "";
@@ -49,10 +51,8 @@ if (contactForm) {
 
         // Check name
         if (name.value.trim() === "") {
-
             nameError.textContent = "Please enter your name.";
             hasErrors = true;
-
         }
 
 
@@ -72,10 +72,8 @@ if (contactForm) {
 
         // Check message
         if (message.value.trim() === "") {
-
             messageError.textContent = "Please enter a message.";
             hasErrors = true;
-
         }
 
 
@@ -85,16 +83,31 @@ if (contactForm) {
         }
 
 
-        // Show success message
-        successMessage.textContent =
-            "Thank you! Your message has been submitted successfully.";
+        // Create the email
+        const subject = encodeURIComponent(
+            `Portfolio Contact from ${name.value.trim()}`
+        );
 
-        contactForm.reset();
+        const body = encodeURIComponent(
+            `Name: ${name.value.trim()}\n` +
+            `Email: ${email.value.trim()}\n\n` +
+            `Message:\n${message.value.trim()}`
+        );
+
+
+        // Open the visitor's email application
+        window.location.href =
+            `mailto:lailaniejobs@gmail.com?subject=${subject}&body=${body}`;
+
+
+        // Show confirmation
+        successMessage.textContent =
+            "Your email application is opening. Thank you for reaching out! ✨";
 
     });
 
 
-    // Clear name error when user fixes it
+    // Clear name error as the user types
     name.addEventListener("input", () => {
 
         if (name.value.trim() !== "") {
@@ -104,7 +117,7 @@ if (contactForm) {
     });
 
 
-    // Clear email error when user fixes it
+    // Clear email error as the user types
     email.addEventListener("input", () => {
 
         if (email.value.trim() !== "" && email.validity.valid) {
@@ -114,7 +127,7 @@ if (contactForm) {
     });
 
 
-    // Clear message error when user fixes it
+    // Clear message error as the user types
     message.addEventListener("input", () => {
 
         if (message.value.trim() !== "") {
