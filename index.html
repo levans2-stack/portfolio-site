@@ -1,95 +1,704 @@
-<!-- Contact -->
-<section id="contact" class="contact-section">
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="section-title">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <p class="eyebrow">LET'S CONNECT</p>
+    <title>Lai'Lanie Evans | Portfolio</title>
 
-        <h2>🌸 Contact Me 🌸</h2>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================================
+         HERO
+         ================================ -->
+
+    <header class="hero">
+
+        <div class="moon" aria-hidden="true">☾</div>
+
+        <h1>Lai'Lanie Evans</h1>
 
         <p>
-            Interested in connecting, discussing an opportunity,
-            or learning more about my work?
+            Creativity, technology, culinary arts, and a little bit of magic.
         </p>
 
-        <p>
-            📧 Email me at:
-            <a href="mailto:lailaniejobs@gmail.com">
-                lailaniejobs@gmail.com
-            </a>
-        </p>
+        <a href="#about" class="button">
+            Explore My World ✨
+        </a>
 
-    </div>
+    </header>
 
 
-    <form id="contactForm" novalidate>
+    <!-- ================================
+         NAVIGATION
+         ================================ -->
 
-        <div>
-            <label for="name">Name *</label>
+    <nav aria-label="Main navigation">
 
-            <input
-                type="text"
-                id="name"
-                name="name"
-                autocomplete="name"
-                aria-describedby="nameError"
-                required>
-
-            <p
-                id="nameError"
-                class="error"
-                aria-live="polite">
-            </p>
-        </div>
-
-
-        <div>
-            <label for="email">Your Email *</label>
-
-            <input
-                type="email"
-                id="email"
-                name="email"
-                autocomplete="email"
-                aria-describedby="emailError"
-                required>
-
-            <p
-                id="emailError"
-                class="error"
-                aria-live="polite">
-            </p>
-        </div>
-
-
-        <div>
-            <label for="message">Message *</label>
-
-            <textarea
-                id="message"
-                name="message"
-                rows="5"
-                aria-describedby="messageError"
-                required></textarea>
-
-            <p
-                id="messageError"
-                class="error"
-                aria-live="polite">
-            </p>
-        </div>
-
-
-        <button type="submit">
-            Send Message ✨
+        <button
+            id="menuButton"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navMenu">
+            ☰ Menu
         </button>
 
-        <p
-            id="successMessage"
-            class="success"
-            aria-live="polite">
+        <div id="navMenu">
+
+            <a href="index.html">Home</a>
+
+            <a href="#about">About Me</a>
+
+            <a href="#culinary">Culinary Journey</a>
+
+            <a href="#technology">Technology</a>
+
+            <a href="#achievements">Achievements</a>
+
+            <a href="#contact">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <main>
+
+
+        <!-- ================================
+             ABOUT ME
+             ================================ -->
+
+        <section id="about">
+
+            <div class="section-title">
+
+                <p class="eyebrow">WELCOME TO MY WORLD</p>
+
+                <h2>🌿 A Little About Me 🌿</h2>
+
+            </div>
+
+
+            <div class="about-layout">
+
+                <div class="about-image">
+
+                    <img
+                        src="18 y.o. - 1.jpeg"
+                        alt="Portrait of Lai'Lanie Evans outdoors in a forest">
+
+                </div>
+
+
+                <div class="about-text">
+
+                    <h3>Hello, I'm Lai'Lanie! ✨</h3>
+
+                    <p>
+                        I'm a creative and curious person who loves learning,
+                        building, and finding new ways to express ideas.
+                        My interests have taken me through culinary arts,
+                        customer service, technology, and web development.
+                    </p>
+
+                    <p>
+                        I enjoy creating things that are useful, welcoming,
+                        and memorable. Whether I'm working with technology
+                        or creating something in the kitchen, I believe
+                        attention to detail and creativity can make a big
+                        difference.
+                    </p>
+
+                    <p>
+                        I'm currently growing my skills in Information
+                        Technology and web development while continuing to
+                        build experiences that combine creativity with
+                        technology.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             MY JOURNEY CARDS
+             ================================ -->
+
+        <section id="explore">
+
+            <div class="section-title">
+
+                <p class="eyebrow">MY JOURNEY</p>
+
+                <h2>✨ The Things I Love ✨</h2>
+
+            </div>
+
+
+            <div class="card-container">
+
+
+                <article class="card">
+
+                    <div class="card-icon">🧚</div>
+
+                    <h3>Creativity</h3>
+
+                    <p>
+                        I love turning ideas into something unique.
+                        I believe websites should feel personal,
+                        beautiful, and memorable.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-icon">💻</div>
+
+                    <h3>Technology</h3>
+
+                    <p>
+                        I'm developing my skills in Information Technology,
+                        HTML, CSS, JavaScript, web development, and
+                        responsive design.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-icon">🌱</div>
+
+                    <h3>Growth</h3>
+
+                    <p>
+                        Every project gives me an opportunity to learn
+                        something new and become better than I was
+                        yesterday.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             CULINARY JOURNEY
+             ================================ -->
+
+        <section id="culinary">
+
+            <div class="section-title">
+
+                <p class="eyebrow">WHERE IT ALL STARTED</p>
+
+                <h2>👩🏽‍🍳 My Culinary Journey</h2>
+
+            </div>
+
+
+            <div class="journey-layout">
+
+                <div class="journey-text">
+
+                    <h3>From the Kitchen to Technology ✨</h3>
+
+                    <p>
+                        Before building websites and studying Information
+                        Technology, I developed my creativity through
+                        culinary arts.
+                    </p>
+
+                    <p>
+                        I graduated from a culinary program, where I learned
+                        that creating something great takes preparation,
+                        patience, organization, teamwork, and attention
+                        to detail.
+                    </p>
+
+                    <p>
+                        Culinary arts taught me how to work under pressure,
+                        solve problems quickly, communicate with others,
+                        and take pride in the finished product.
+                    </p>
+
+                    <p>
+                        Those lessons continue to influence the way I
+                        approach technology today. Whether I'm preparing
+                        a dish or writing code, I enjoy taking an idea
+                        and turning it into something people can experience.
+                    </p>
+
+                </div>
+
+
+                <div class="journey-card">
+
+                    <div class="card-icon">🎓</div>
+
+                    <h3>Culinary Graduate</h3>
+
+                    <p>
+                        A creative foundation built through culinary arts,
+                        teamwork, discipline, and hands-on experience.
+                    </p>
+
+                    <div class="card-icon">🍰</div>
+
+                    <p>
+                        Cooking taught me that creativity and attention
+                        to detail can turn simple ingredients into
+                        something special.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             TECHNOLOGY
+             ================================ -->
+
+        <section id="technology">
+
+            <div class="section-title">
+
+                <p class="eyebrow">MY NEXT CHAPTER</p>
+
+                <h2>💻 My Technology Journey</h2>
+
+            </div>
+
+
+            <div class="technology-grid">
+
+
+                <article class="card">
+
+                    <div class="card-icon">🌐</div>
+
+                    <h3>Web Development</h3>
+
+                    <p>
+                        I'm learning how to create accessible,
+                        responsive websites using HTML, CSS,
+                        and JavaScript.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-icon">🖥️</div>
+
+                    <h3>Information Technology</h3>
+
+                    <p>
+                        I'm building my knowledge of technology,
+                        computer systems, networking, troubleshooting,
+                        and technical support.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-icon">🌱</div>
+
+                    <h3>Always Learning</h3>
+
+                    <p>
+                        Technology changes constantly, and I enjoy
+                        learning new tools and challenging myself
+                        with new projects.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             PHOTO GALLERY
+             ================================ -->
+
+        <section id="gallery">
+
+            <div class="section-title">
+
+                <p class="eyebrow">A FEW MOMENTS</p>
+
+                <h2>📸 My Gallery</h2>
+
+                <p>
+                    A few snapshots that are part of my story.
+                </p>
+
+            </div>
+
+
+            <div class="photo-gallery">
+
+
+                <figure>
+
+                    <img
+                        src="IMG_1711.jpeg"
+                        alt="Portrait of Lai'Lanie">
+
+                    <figcaption>
+                        A little confidence ✨
+                    </figcaption>
+
+                </figure>
+
+
+                <figure>
+
+                    <img
+                        src="IMG_1712.jpeg"
+                        alt="Portrait of Lai'Lanie">
+
+                    <figcaption>
+                        Growing into myself 🌱
+                    </figcaption>
+
+                </figure>
+
+
+                <figure>
+
+                    <img
+                        src="IMG_1944.jpeg"
+                        alt="Portrait of Lai'Lanie">
+
+                    <figcaption>
+                        Life outside the screen 🌙
+                    </figcaption>
+
+                </figure>
+
+
+                <figure>
+
+                    <img
+                        src="IMG_0443.jpeg"
+                        alt="Portrait of Lai'Lanie">
+
+                    <figcaption>
+                        A moment from my journey 🌿
+                    </figcaption>
+
+                </figure>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             ACHIEVEMENTS
+             ================================ -->
+
+        <section id="achievements">
+
+            <div class="section-title">
+
+                <p class="eyebrow">MOMENTS THAT MATTER</p>
+
+                <h2>🏆 Achievements & Recognition</h2>
+
+                <p>
+                    I'm grateful for the people who have taken the time
+                    to recognize my work, kindness, and dedication.
+                </p>
+
+            </div>
+
+
+            <div class="recognition-grid">
+
+
+                <figure>
+
+                    <img
+                        src="IMG_5161.png"
+                        alt="Guest recognition received by Lai'Lanie">
+
+                    <figcaption>
+                        Guest recognition ✨
+                    </figcaption>
+
+                </figure>
+
+
+                <figure>
+
+                    <img
+                        src="IMG_5110.jpeg"
+                        alt="Additional guest recognition received by Lai'Lanie">
+
+                    <figcaption>
+                        Another special recognition 🌟
+                    </figcaption>
+
+                </figure>
+
+
+            </div>
+
+
+            <div class="recognition-text">
+
+                <h3>Creating Positive Experiences</h3>
+
+                <p>
+                    Working with people has taught me how important
+                    kindness, communication, patience, and making
+                    someone feel welcome can be.
+                </p>
+
+                <p>
+                    These moments of recognition remind me that even
+                    small interactions can make someone's day better.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             SKILLS
+             ================================ -->
+
+        <section class="skills-section" id="skills">
+
+            <div class="section-title">
+
+                <p class="eyebrow">MY TOOLKIT</p>
+
+                <h2>✨ My Skill Garden ✨</h2>
+
+            </div>
+
+
+            <div class="skills">
+
+                <span>HTML</span>
+
+                <span>CSS</span>
+
+                <span>JavaScript</span>
+
+                <span>Flexbox</span>
+
+                <span>Responsive Design</span>
+
+                <span>Web Development</span>
+
+                <span>Information Technology</span>
+
+                <span>Customer Service</span>
+
+                <span>Problem Solving</span>
+
+                <span>Communication</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             CONTACT
+             ================================ -->
+
+        <section id="contact" class="contact-section">
+
+            <div class="section-title">
+
+                <p class="eyebrow">LET'S CONNECT</p>
+
+                <h2>🌸 Contact Me 🌸</h2>
+
+                <p>
+                    Interested in connecting, discussing an opportunity,
+                    or learning more about my work?
+                </p>
+
+                <p class="email-link">
+
+                    📧
+                    <a href="mailto:lailaniejobs@gmail.com">
+                        lailaniejobs@gmail.com
+                    </a>
+
+                </p>
+
+            </div>
+
+
+            <form id="contactForm" novalidate>
+
+                <div>
+
+                    <label for="name">
+                        Name *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        autocomplete="name"
+                        aria-describedby="nameError"
+                        required>
+
+                    <p
+                        id="nameError"
+                        class="error"
+                        aria-live="polite">
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <label for="email">
+                        Your Email *
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        aria-describedby="emailError"
+                        required>
+
+                    <p
+                        id="emailError"
+                        class="error"
+                        aria-live="polite">
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <label for="message">
+                        Message *
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        aria-describedby="messageError"
+                        required></textarea>
+
+                    <p
+                        id="messageError"
+                        class="error"
+                        aria-live="polite">
+                    </p>
+
+                </div>
+
+
+                <button type="submit">
+                    Send Message ✨
+                </button>
+
+
+                <p
+                    id="successMessage"
+                    class="success"
+                    aria-live="polite">
+                </p>
+
+            </form>
+
+        </section>
+
+
+        <!-- ================================
+             BONUS API
+             ================================ -->
+
+        <section class="fact-section">
+
+            <div class="section-title">
+
+                <p class="eyebrow">A LITTLE EXTRA MAGIC</p>
+
+                <h2>✨ Random Fun Fact ✨</h2>
+
+                <p id="fact">
+                    Click the button to discover something new!
+                </p>
+
+            </div>
+
+
+            <button
+                id="factButton"
+                type="button">
+                Get a Fun Fact 🌿
+            </button>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================================
+         FOOTER
+         ================================ -->
+
+    <footer>
+
+        <p>
+            🌙 Made with creativity and a little bit of magic.
         </p>
 
-    </form>
+        <p>
+            © 2026 Lai'Lanie Evans
+        </p>
 
-</section>
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
