@@ -22,7 +22,6 @@ body {
     min-width: 320px;
 }
 
-/* Type selector */
 p {
     margin-bottom: 16px;
 }
@@ -51,33 +50,78 @@ h3 {
     margin-bottom: 16px;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
 /* ---------- Header ---------- */
 
 header {
     background: #18382a;
     border-bottom: 3px solid #c9a44c;
-    padding: 32px 24px;
+    padding: 50px 24px;
     text-align: center;
 }
 
 header p {
     color: #f4f1df;
+    max-width: 650px;
+    margin: 0 auto 24px;
 }
+
+.moon {
+    font-size: 3rem;
+    color: #f3d58a;
+    margin-bottom: 10px;
+}
+
+
+/* ---------- Hero Button ---------- */
+
+.button {
+    background: #c9a44c;
+    border: 2px solid #f3d58a;
+    border-radius: 8px;
+    color: #10231b;
+    display: inline-block;
+    font-weight: 700;
+    padding: 12px 24px;
+    text-decoration: none;
+}
+
+.button:hover,
+.button:focus {
+    background: #f3d58a;
+    color: #10231b;
+    outline: 3px solid #fff4c7;
+    outline-offset: 2px;
+}
+
 
 /* ---------- Navigation ---------- */
 
 nav {
+    background: #0b1812;
+    border-bottom: 1px solid #4f765d;
+    margin: 0;
+    padding: 12px 20px;
+    text-align: center;
+}
+
+#navMenu {
     display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
     justify-content: center;
-    margin-bottom: 32px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 nav a {
     color: #fff4c7;
     font-weight: 700;
-    padding: 8px 16px;
+    padding: 8px 14px;
     text-decoration: none;
     border: 2px solid transparent;
     border-radius: 8px;
@@ -89,6 +133,11 @@ nav a:focus {
     background: #245039;
     outline: none;
 }
+
+#menuButton {
+    display: none;
+}
+
 
 /* ---------- Main Layout ---------- */
 
@@ -106,35 +155,53 @@ section {
     padding: 32px;
 }
 
-/* ID selector */
-#about-heading,
-#contact-heading,
-#skills-heading,
-#projects-heading {
-    text-shadow: 0 1px 2px #08140f;
+.section-title {
+    margin-bottom: 30px;
 }
+
+.eyebrow {
+    color: #c9a44c;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* ---------- About ---------- */
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-image img {
+    border: 3px solid #c9a44c;
+    border-radius: 16px;
+    margin: 0 auto;
+    max-height: 550px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.about-text {
+    font-size: 1.05rem;
+}
+
 
 /* ---------- Cards ---------- */
 
-/*
-   Gestalt: Proximity
-   Related information is grouped together inside each card.
-*/
-
-/*
-   Gestalt: Similarity
-   Each card uses the same visual structure and styling.
-*/
-
 .card-container,
-.project-grid {
+.technology-grid {
     display: grid;
     gap: 24px;
     grid-template-columns: repeat(3, 1fr);
 }
 
 .card,
-.project-card {
+.journey-card {
     background: #245039;
     border: 2px solid #5f876b;
     border-radius: 12px;
@@ -142,47 +209,123 @@ section {
 }
 
 .card p,
-.project-card p {
+.journey-card p {
     color: #f4f1df;
 }
 
-.project-card a {
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+
+/* ---------- Culinary Journey ---------- */
+
+.journey-layout {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.journey-text {
+    font-size: 1.05rem;
+}
+
+.journey-card {
+    text-align: center;
+}
+
+
+/* ---------- Gallery ---------- */
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.photo-gallery figure,
+.recognition-grid figure {
+    background: #245039;
+    border: 2px solid #5f876b;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.photo-gallery img {
+    height: 280px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.photo-gallery figcaption,
+.recognition-grid figcaption {
+    padding: 12px;
+    text-align: center;
     color: #fff4c7;
-    display: inline-block;
     font-weight: 700;
-    margin-top: 8px;
 }
 
-.project-card a:hover,
-.project-card a:focus {
-    color: #ffffff;
+
+/* ---------- Achievements ---------- */
+
+.recognition-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 30px;
 }
 
-/* ---------- Contact Form ---------- */
-
-form {
-    margin-top: 24px;
+.recognition-grid img {
+    height: 350px;
+    object-fit: contain;
+    width: 100%;
+    background: #10231b;
 }
 
-fieldset {
+.recognition-text {
+    background: #245039;
     border: 2px solid #5f876b;
     border-radius: 12px;
     padding: 24px;
 }
 
-legend {
+
+/* ---------- Skills ---------- */
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.skills span {
+    background: #245039;
+    border: 1px solid #c9a44c;
+    border-radius: 20px;
     color: #fff4c7;
-    font-family: "Cinzel", serif;
-    font-size: 1.2rem;
     font-weight: 700;
-    padding: 0 8px;
+    padding: 10px 18px;
 }
 
-.form-group {
-    margin-bottom: 24px;
+
+/* ---------- Contact Form ---------- */
+
+.contact-section {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-label {
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#contactForm label {
     display: block;
     font-weight: 700;
     margin-bottom: 8px;
@@ -200,6 +343,10 @@ textarea {
     width: 100%;
 }
 
+textarea {
+    resize: vertical;
+}
+
 input:focus,
 textarea:focus {
     border-color: #c9a44c;
@@ -207,19 +354,32 @@ textarea:focus {
     outline-offset: 2px;
 }
 
-/* Accessible error state */
-input:invalid:not(:placeholder-shown),
-textarea:invalid:not(:placeholder-shown) {
-    border: 3px solid #a83232;
-}
-
-.error-message {
+.error {
     color: #ffd6d6;
     font-size: 0.9rem;
-    margin-top: 8px;
+    font-weight: 700;
+    min-height: 20px;
+    margin-top: 5px;
 }
 
-/* ---------- Button ---------- */
+.success {
+    color: #f3d58a;
+    font-weight: 700;
+    min-height: 20px;
+}
+
+.email-link a {
+    color: #f3d58a;
+    font-weight: 700;
+}
+
+.email-link a:hover,
+.email-link a:focus {
+    color: #fff4c7;
+}
+
+
+/* ---------- Buttons ---------- */
 
 button {
     background: #c9a44c;
@@ -230,7 +390,6 @@ button {
     font-family: "Quicksand", sans-serif;
     font-size: 1rem;
     font-weight: 700;
-    margin-top: 24px;
     padding: 12px 24px;
 }
 
@@ -240,6 +399,31 @@ button:focus {
     outline: 3px solid #fff4c7;
     outline-offset: 2px;
 }
+
+
+/* ---------- Fun Fact ---------- */
+
+.fact-section {
+    text-align: center;
+}
+
+#fact {
+    margin: 20px auto;
+    max-width: 750px;
+    min-height: 50px;
+}
+
+
+/* ---------- Keyboard Accessibility ---------- */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #fff4c7;
+    outline-offset: 3px;
+}
+
 
 /* ---------- Footer ---------- */
 
@@ -252,45 +436,41 @@ footer {
 
 footer p {
     color: #f4f1df;
-    margin: 0;
+    margin-bottom: 8px;
 }
 
-/* ---------- Responsive: Tablet ---------- */
 
-@media (max-width: 768px) {
+/* ==========================================
+   TABLET
+   ========================================== */
 
-    h1 {
-        font-size: 2rem;
-    }
+@media (max-width: 900px) {
 
-    main {
-        padding: 32px 16px;
-    }
-
-    section {
-        padding: 24px;
+    .about-layout,
+    .journey-layout {
+        grid-template-columns: 1fr;
     }
 
     .card-container,
-    .project-grid {
+    .technology-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    nav {
-        gap: 8px;
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
     }
+
 }
 
-/* ---------- Responsive: Mobile ---------- */
 
-@media (max-width: 480px) {
+/* ==========================================
+   MOBILE
+   ========================================== */
 
-    header {
-        padding: 24px 16px;
-    }
+@media (max-width: 700px) {
 
     h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     h2 {
@@ -298,130 +478,88 @@ footer p {
     }
 
     main {
-        padding: 24px 16px;
+        padding: 30px 16px;
     }
 
     section {
-        padding: 20px;
+        padding: 22px;
     }
 
-    .card-container,
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
 
-    nav {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    nav a {
-        text-align: center;
-    }
-
-    fieldset {
-        padding: 16px;
-    }
-}
-/* ==========================================
-   JAVASCRIPT INTERACTIONS
-   ========================================== */
-
-/* Mobile menu */
-#menuButton {
-    display: none;
-    margin: 10px auto;
-}
-
-#navMenu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-
-#navMenu.show {
-    display: flex;
-}
-
-
-/* Contact form */
-.contact-section {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#contactForm {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-#contactForm button {
-    align-self: flex-start;
-}
-
-
-/* Error messages */
-.error {
-    color: #ffd6d6;
-    font-size: 0.9rem;
-    font-weight: 700;
-    min-height: 20px;
-    margin-top: 6px;
-}
-
-
-/* Success message */
-.success {
-    color: #f3d58a;
-    font-weight: 700;
-    min-height: 20px;
-    margin-top: 10px;
-}
-
-
-/* Bonus API section */
-.fact-section {
-    text-align: center;
-}
-
-#fact {
-    min-height: 50px;
-    margin: 20px auto;
-}
-
-
-/* Keyboard accessibility */
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-    outline: 3px solid #fff4c7;
-    outline-offset: 3px;
-}
-
-
-/* ==========================================
-   MOBILE JAVASCRIPT MENU
-   ========================================== */
-
-@media (max-width: 700px) {
+    /* Mobile menu button */
 
     #menuButton {
         display: block;
+        margin: 0 auto;
     }
+
+
+    /* Hide navigation links until button is clicked */
 
     #navMenu {
         display: none;
         flex-direction: column;
+        gap: 8px;
+        margin-top: 12px;
         width: 100%;
     }
 
+
+    /* Show navigation when JavaScript adds .show */
+
     #navMenu.show {
         display: flex;
+    }
+
+
+    nav a {
+        text-align: center;
+        width: 100%;
+    }
+
+
+    .card-container,
+    .technology-grid,
+    .photo-gallery,
+    .recognition-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .photo-gallery img {
+        height: auto;
+        max-height: 500px;
+    }
+
+
+    .recognition-grid img {
+        height: auto;
+    }
+
+}
+
+
+/* ==========================================
+   SMALL PHONES
+   ========================================== */
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 35px 16px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    .skills span {
+        font-size: 0.9rem;
+        padding: 8px 12px;
     }
 
 }
