@@ -323,3 +323,105 @@ footer p {
         padding: 16px;
     }
 }
+/* ==========================================
+   JAVASCRIPT INTERACTIONS
+   ========================================== */
+
+/* Mobile menu */
+#menuButton {
+    display: none;
+    margin: 10px auto;
+}
+
+#navMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+#navMenu.show {
+    display: flex;
+}
+
+
+/* Contact form */
+.contact-section {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#contactForm button {
+    align-self: flex-start;
+}
+
+
+/* Error messages */
+.error {
+    color: #ffd6d6;
+    font-size: 0.9rem;
+    font-weight: 700;
+    min-height: 20px;
+    margin-top: 6px;
+}
+
+
+/* Success message */
+.success {
+    color: #f3d58a;
+    font-weight: 700;
+    min-height: 20px;
+    margin-top: 10px;
+}
+
+
+/* Bonus API section */
+.fact-section {
+    text-align: center;
+}
+
+#fact {
+    min-height: 50px;
+    margin: 20px auto;
+}
+
+
+/* Keyboard accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #fff4c7;
+    outline-offset: 3px;
+}
+
+
+/* ==========================================
+   MOBILE JAVASCRIPT MENU
+   ========================================== */
+
+@media (max-width: 700px) {
+
+    #menuButton {
+        display: block;
+    }
+
+    #navMenu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #navMenu.show {
+        display: flex;
+    }
+
+}
