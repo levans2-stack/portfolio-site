@@ -6,11 +6,12 @@ const menuButton = document.querySelector("#menuButton");
 const navMenu = document.querySelector("#navMenu");
 
 if (menuButton && navMenu) {
-  menuButton.addEventListener("click", () => {
-    const isOpen = navMenu.classList.toggle("show");
+    menuButton.addEventListener("click", () => {
 
-    menuButton.setAttribute("aria-expanded", isOpen);
-  });
+        const isOpen = navMenu.classList.toggle("show");
+
+        menuButton.setAttribute("aria-expanded", isOpen);
+    });
 }
 
 
@@ -21,8 +22,6 @@ if (menuButton && navMenu) {
 const contactForm = document.querySelector("#contactForm");
 
 if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
 
     const name = document.querySelector("#name");
     const email = document.querySelector("#email");
@@ -33,74 +32,134 @@ if (contactForm) {
     const messageError = document.querySelector("#messageError");
     const successMessage = document.querySelector("#successMessage");
 
-    // Clear previous errors
-    nameError.textContent = "";
-    emailError.textContent = "";
-    messageError.textContent = "";
-    successMessage.textContent = "";
 
-    let hasErrors = false;
+    contactForm.addEventListener("submit", (event) => {
 
-    // Check name
-    if (name.value.trim() === "") {
-      nameError.textContent = "Please enter your name.";
-      hasErrors = true;
-    }
+        // Prevent the form from submitting/reloading the page
+        event.preventDefault();
 
-    // Check email
-    if (email.value.trim() === "") {
-      emailError.textContent = "Please enter your email address.";
-      hasErrors = true;
-    } else if (!email.validity.valid) {
-      emailError.textContent = "Please enter a valid email address.";
-      hasErrors = true;
-    }
+        // Clear old messages
+        nameError.textContent = "";
+        emailError.textContent = "";
+        messageError.textContent = "";
+        successMessage.textContent = "";
 
-    // Check message
-    if (message.value.trim() === "") {
-      messageError.textContent = "Please enter a message.";
-      hasErrors = true;
-    }
+        let hasErrors = false;
 
-    // Stop if there are errors
-    if (hasErrors) {
-      return;
-    }
 
-    // Successful validation
-    successMessage.textContent =
-      "Thank you! Your message has been submitted successfully.";
+        // Check name
+        if (name.value.trim() === "") {
 
-    contactForm.reset();
-  });
+            nameError.textContent = "Please enter your name.";
+            hasErrors = true;
 
-  // Clear name error when corrected
-  const name = document.querySelector("#name");
-  const nameError = document.querySelector("#nameError");
+        }
 
-  name.addEventListener("input", () => {
-    if (name.value.trim() !== "") {
-      nameError.textContent = "";
-    }
-  });
 
-  // Clear email error when corrected
-  const email = document.querySelector("#email");
-  const emailError = document.querySelector("#emailError");
+        // Check email
+        if (email.value.trim() === "") {
 
-  email.addEventListener("input", () => {
-    if (email.value.trim() !== "" && email.validity.valid) {
-      emailError.textContent = "";
-    }
-  });
+            emailError.textContent = "Please enter your email address.";
+            hasErrors = true;
 
-  // Clear message error when corrected
-  const message = document.querySelector("#message");
-  const messageError = document.querySelector("#messageError");
+        } else if (!email.validity.valid) {
 
-  message.addEventListener("input", () => {
-    if (message.value.trim() !== "") {
-      messageError.textContent = "";
-    }
-  });
+            emailError.textContent = "Please enter a valid email address.";
+            hasErrors = true;
+
+        }
+
+
+        // Check message
+        if (message.value.trim() === "") {
+
+            messageError.textContent = "Please enter a message.";
+            hasErrors = true;
+
+        }
+
+
+        // Stop if there are errors
+        if (hasErrors) {
+            return;
+        }
+
+
+        // Show success message
+        successMessage.textContent =
+            "Thank you! Your message has been submitted successfully.";
+
+        contactForm.reset();
+
+    });
+
+
+    // Clear name error when user fixes it
+    name.addEventListener("input", () => {
+
+        if (name.value.trim() !== "") {
+            nameError.textContent = "";
+        }
+
+    });
+
+
+    // Clear email error when user fixes it
+    email.addEventListener("input", () => {
+
+        if (email.value.trim() !== "" && email.validity.valid) {
+            emailError.textContent = "";
+        }
+
+    });
+
+
+    // Clear message error when user fixes it
+    message.addEventListener("input", () => {
+
+        if (message.value.trim() !== "") {
+            messageError.textContent = "";
+        }
+
+    });
+
+}
+
+
+// ==========================================
+// 3. BONUS API — RANDOM FUN FACT
+// ==========================================
+
+const factButton = document.querySelector("#factButton");
+const fact = document.querySelector("#fact");
+
+if (factButton && fact) {
+
+    factButton.addEventListener("click", async () => {
+
+        fact.textContent = "Loading a fun fact...";
+
+        try {
+
+            const response = await fetch(
+                "https://uselessfacts.jsph.pl/api/v2/facts/random"
+            );
+
+            if (!response.ok) {
+                throw new Error("Unable to get a fun fact.");
+            }
+
+            const data = await response.json();
+
+            fact.textContent = data.text;
+
+        } catch (error) {
+
+            fact.textContent =
+                "Sorry! We couldn't load a fun fact right now. Please try again.";
+
+        }
+
+    });
+
 }
