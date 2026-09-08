@@ -29,15 +29,29 @@
     </header>
 
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="about.html">About & Contact</a>
+    <!-- Navigation -->
+    <nav aria-label="Main navigation">
+
+        <button
+            id="menuButton"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navMenu">
+            ☰ Menu
+        </button>
+
+        <div id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="about.html">About & Contact</a>
+        </div>
+
     </nav>
 
 
     <main>
 
+        <!-- About / Explore Section -->
         <section id="explore">
 
             <div class="section-title">
@@ -105,6 +119,7 @@
         </section>
 
 
+        <!-- Quote -->
         <section class="quote-section">
 
             <div class="quote">
@@ -123,6 +138,7 @@
         </section>
 
 
+        <!-- Skills -->
         <section class="skills-section">
 
             <div class="section-title">
@@ -147,6 +163,114 @@
 
         </section>
 
+
+        <!-- Contact Form -->
+        <section id="contact" class="contact-section">
+
+            <div class="section-title">
+
+                <p class="eyebrow">LET'S CONNECT</p>
+
+                <h2>🌸 Contact Me 🌸</h2>
+
+                <p>
+                    Have a question or want to connect?
+                    Send me a message!
+                </p>
+
+            </div>
+
+
+            <form id="contactForm" novalidate>
+
+                <div>
+                    <label for="name">Name *</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        autocomplete="name"
+                        aria-describedby="nameError">
+
+                    <p
+                        id="nameError"
+                        class="error"
+                        aria-live="polite">
+                    </p>
+                </div>
+
+
+                <div>
+                    <label for="email">Email *</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        aria-describedby="emailError">
+
+                    <p
+                        id="emailError"
+                        class="error"
+                        aria-live="polite">
+                    </p>
+                </div>
+
+
+                <div>
+                    <label for="message">Message *</label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        aria-describedby="messageError"></textarea>
+
+                    <p
+                        id="messageError"
+                        class="error"
+                        aria-live="polite">
+                    </p>
+                </div>
+
+
+                <button type="submit">
+                    Send Message ✨
+                </button>
+
+
+                <p
+                    id="successMessage"
+                    class="success"
+                    aria-live="polite">
+                </p>
+
+            </form>
+
+        </section>
+
+
+        <!-- Bonus API Interaction -->
+        <section class="fact-section">
+
+            <div class="section-title">
+
+                <p class="eyebrow">A LITTLE EXTRA MAGIC</p>
+
+                <h2>✨ Random Fun Fact ✨</h2>
+
+            </div>
+
+            <p id="fact">Loading a fun fact...</p>
+
+            <button id="factButton" type="button">
+                Get Another Fact 🌿
+            </button>
+
+        </section>
+
     </main>
 
 
@@ -157,9 +281,10 @@
         </p>
 
     </footer>
-    
-<script src="script.js"></script>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
 </body>
 </html>
-
-
