@@ -1,290 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Contact -->
+<section id="contact" class="contact-section">
 
-    <title>Lai'Lanie Evans</title>
+    <div class="section-title">
 
-    <link rel="stylesheet" href="style.css">
-</head>
+        <p class="eyebrow">LET'S CONNECT</p>
 
-<body>
-
-    <header class="hero">
-
-        <div class="moon">☾</div>
-
-        <h1>Lai'Lanie Evans</h1>
+        <h2>🌸 Contact Me 🌸</h2>
 
         <p>
-            Welcome to my little corner of the digital forest,
-            where creativity and technology grow together.
+            Interested in connecting, discussing an opportunity,
+            or learning more about my work?
         </p>
 
-        <a href="#explore" class="button">
-            Explore My World ✨
-        </a>
+        <p>
+            📧 Email me at:
+            <a href="mailto:lailaniejobs@gmail.com">
+                lailaniejobs@gmail.com
+            </a>
+        </p>
 
-    </header>
+    </div>
 
 
-    <!-- Navigation -->
-    <nav aria-label="Main navigation">
+    <form id="contactForm" novalidate>
 
-        <button
-            id="menuButton"
-            type="button"
-            aria-expanded="false"
-            aria-controls="navMenu">
-            ☰ Menu
-        </button>
+        <div>
+            <label for="name">Name *</label>
 
-        <div id="navMenu">
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="about.html">About & Contact</a>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                aria-describedby="nameError"
+                required>
+
+            <p
+                id="nameError"
+                class="error"
+                aria-live="polite">
+            </p>
         </div>
 
-    </nav>
 
-
-    <main>
-
-        <!-- About / Explore Section -->
-        <section id="explore">
-
-            <div class="section-title">
-
-                <p class="eyebrow">WELCOME TO THE FOREST</p>
-
-                <h2>🌿 A Little About Me 🌿</h2>
-
-                <p>
-                    I'm learning, creating, and building my way
-                    through the world of technology.
-                </p>
-
-            </div>
-
-
-            <div class="forest-cards">
-
-                <article class="card">
-
-                    <div class="card-icon">🧚</div>
-
-                    <h3>Creativity</h3>
-
-                    <p>
-                        I love turning ideas into something unique.
-                        I believe websites should feel personal,
-                        beautiful, and memorable.
-                    </p>
-
-                </article>
-
-
-                <article class="card">
-
-                    <div class="card-icon">💻</div>
-
-                    <h3>Technology</h3>
-
-                    <p>
-                        I'm developing my skills in information
-                        technology, web development, HTML, CSS,
-                        and responsive design.
-                    </p>
-
-                </article>
-
-
-                <article class="card">
-
-                    <div class="card-icon">🌱</div>
-
-                    <h3>Growth</h3>
-
-                    <p>
-                        Every project gives me a chance to learn
-                        something new and become better than I was
-                        yesterday.
-                    </p>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- Quote -->
-        <section class="quote-section">
-
-            <div class="quote">
-
-                <span>“</span>
-
-                <p>
-                    Creating something beautiful starts with
-                    believing that your ideas are worth growing.
-                </p>
-
-                <small>— Lai'Lanie</small>
-
-            </div>
-
-        </section>
-
-
-        <!-- Skills -->
-        <section class="skills-section">
-
-            <div class="section-title">
-
-                <p class="eyebrow">MY TOOLKIT</p>
-
-                <h2>✨ My Skill Garden ✨</h2>
-
-            </div>
-
-
-            <div class="skills">
-
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>Flexbox</span>
-                <span>Responsive Design</span>
-                <span>Web Development</span>
-                <span>Information Technology</span>
-
-            </div>
-
-        </section>
-
-
-        <!-- Contact Form -->
-        <section id="contact" class="contact-section">
-
-            <div class="section-title">
-
-                <p class="eyebrow">LET'S CONNECT</p>
-
-                <h2>🌸 Contact Me 🌸</h2>
-
-                <p>
-                    Have a question or want to connect?
-                    Send me a message!
-                </p>
-
-            </div>
-
-
-            <form id="contactForm" novalidate>
-
-                <div>
-                    <label for="name">Name *</label>
-
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        autocomplete="name"
-                        aria-describedby="nameError">
-
-                    <p
-                        id="nameError"
-                        class="error"
-                        aria-live="polite">
-                    </p>
-                </div>
-
-
-                <div>
-                    <label for="email">Email *</label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        autocomplete="email"
-                        aria-describedby="emailError">
-
-                    <p
-                        id="emailError"
-                        class="error"
-                        aria-live="polite">
-                    </p>
-                </div>
-
-
-                <div>
-                    <label for="message">Message *</label>
-
-                    <textarea
-                        id="message"
-                        name="message"
-                        rows="5"
-                        aria-describedby="messageError"></textarea>
-
-                    <p
-                        id="messageError"
-                        class="error"
-                        aria-live="polite">
-                    </p>
-                </div>
-
-
-                <button type="submit">
-                    Send Message ✨
-                </button>
-
-
-                <p
-                    id="successMessage"
-                    class="success"
-                    aria-live="polite">
-                </p>
-
-            </form>
-
-        </section>
-
-
-        <!-- Bonus API Interaction -->
-        <section class="fact-section">
-
-            <div class="section-title">
-
-                <p class="eyebrow">A LITTLE EXTRA MAGIC</p>
-
-                <h2>✨ Random Fun Fact ✨</h2>
-
-            </div>
-
-            <p id="fact">Loading a fun fact...</p>
-
-            <button id="factButton" type="button">
-                Get Another Fact 🌿
-            </button>
-
-        </section>
-
-    </main>
-
-
-    <footer>
-
-        <p>
-            🌙 Made with creativity and a little bit of magic.
+        <div>
+            <label for="email">Your Email *</label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                aria-describedby="emailError"
+                required>
+
+            <p
+                id="emailError"
+                class="error"
+                aria-live="polite">
+            </p>
+        </div>
+
+
+        <div>
+            <label for="message">Message *</label>
+
+            <textarea
+                id="message"
+                name="message"
+                rows="5"
+                aria-describedby="messageError"
+                required></textarea>
+
+            <p
+                id="messageError"
+                class="error"
+                aria-live="polite">
+            </p>
+        </div>
+
+
+        <button type="submit">
+            Send Message ✨
+        </button>
+
+        <p
+            id="successMessage"
+            class="success"
+            aria-live="polite">
         </p>
 
-    </footer>
+    </form>
 
-
-    <!-- JavaScript -->
-    <script src="script.js"></script>
-
-</body>
-</html>
+</section>
